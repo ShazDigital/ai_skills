@@ -1,0 +1,38 @@
+@import 'https://fonts.googleapis.com/css2?family=Sansation:wght@300;400;700&family=Special+Elite&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&display=swap';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #c66d5a;
+  --secondary-color: #8A2BE2;
+  --accent-color: #20B2AA;
+}
+
+body {
+  font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.grainy {
+  position: relative;
+}
+
+.grainy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: 
+    linear-gradient(45deg, rgba(229, 231, 235, 0.2), rgba(243, 244, 246, 0.2), rgba(209, 213, 219, 0.2)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
